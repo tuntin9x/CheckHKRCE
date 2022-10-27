@@ -1,5 +1,6 @@
 # CheckHKRCE
 CVE-2021-36260
+Source code based on: https://github.com/mcw0/PoC/blob/master/CVE-2021-36260.py
 # Install 
 - Python 3.8 +
 - pip install requests
